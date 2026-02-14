@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Untuk Hani ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --maroon:#7a1f2b;
+  --pink:#ffd6df;
+  --cream:#fff7f4;
+}
+
+body{
+  margin:0;
+  font-family:Poppins,sans-serif;
+  background:linear-gradient(160deg,var(--cream),var(--pink));
+  overflow-x:hidden;
+}
+
+/* INTRO */
+#intro{
+  position:fixed;
+  inset:0;
+  background:black;
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  z-index:9999;
+  transition:1s;
+}
+
+#intro.fade{opacity:0;pointer-events:none}
+
+.intro-text{
+  font-size:28px;
+  max-width:600px;
+  animation:fadeIn 2s forwards;
+}
+
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+/* SECTION */
+section{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:40px 20px;
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s ease;
+}
+
+section.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+h1,h2{
+  font-family:"Playfair Display",serif;
+  color:var(--maroon);
+}
+
+p{max-width:650px;line-height:1.8;font-size:18px}
+
+/* BUTTON */
+button{
+  margin-top:30px;
+  padding:14px 30px;
+  border:none;
+  border-radius:30px;
+  background:var(--maroon);
+  color:white;
+  cursor:pointer;
+}
+
+/* PHOTO */
+.photo{
+  margin-top:25px;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 15px 40px rgba(0,0,0,.2);
+}
+
+.photo img{width:260px}
+
+/* COUNTER */
+.counter{
+  font-size:28px;
+  font-weight:600;
+  color:var(--maroon);
+  margin-top:20px;
+}
+
+/* INPUT */
+input{
+  padding:12px;
+  border-radius:10px;
+  border:1px solid #ccc;
+  font-size:18px;
+  text-align:center;
+  width:180px;
+}
+
+/* ENVELOPE */
+.envelope{
+  width:260px;
+  height:160px;
+  background:#fff;
+  border-radius:12px;
+  position:relative;
+  box-shadow:0 10px 30px rgba(0,0,0,.2);
+  cursor:pointer;
+}
+
+.flap{
+  position:absolute;
+  top:0;
+  width:100%;
+  height:80px;
+  background:#ffd6df;
+  clip-path:polygon(0 0,100% 0,50% 100%);
+  transform-origin:top;
+  transition:.8s;
+}
+
+.envelope.open .flap{transform:rotateX(180deg)}
+
+/* LETTER */
+.letter{
+  background:white;
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 15px 40px rgba(0,0,0,.15);
+  max-width:700px;
+  text-align:left;
+  line-height:1.9;
+  margin-top:20px;
+  display:none;
+}
+
+/* FINAL */
+#final{
+  background:linear-gradient(160deg,#7a1f2b,#b63c54);
+  color:white;
+  display:none;
+}
+
+footer{text-align:center;padding:20px;opacity:.7}
+</style>
+</head>
+
+<body>
+
+<!-- INTRO -->
+<div id="intro">
+  <div class="intro-text">
+    Ada sesuatu yang ingin aku sampaikan…<br><br>
+    khusus untuk kamu, Hani ❤️
+  </div>
+</div>
+
+<audio id="music" loop>
+  <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_4b5b7db1c3.mp3">
+</audio>
+
+<!-- OPENING -->
+<section class="show">
+  <h1>Untuk Hani 💌</h1>
+
+  <p>
+    Bukan hadiah mahal.<br>
+    Bukan juga sesuatu yang bisa dibungkus.<br>
+    Tapi sesuatu yang dibuat… cuma buat kamu sayang.
+  </p>
+
+  <button onclick="start()">Masuk ke hatiku ✨</button>
+</section>
+
+<!-- PHOTO -->
+<section>
+  <h2>Kita 🤍</h2>
+
+  <div class="photo">
+    <img src="photo.jpg">
+  </div>
+
+  <p>
+    Dari semua hal yang pernah terjadi di hidupku…  
+    ketemu kamu adalah salah satu yang paling aku syukuri.
+  </p>
+</section>
+
+<!-- GENIT -->
+<section>
+  <h2>Pengakuan kecil 😏</h2>
+
+  <p>
+    Kadang aku kangen kamu sampai pengen tiba-tiba VC.  
+    Bukan karena ada yang penting… cuma pengen lihat kamu aja.
+  </p>
+
+  <p>
+    Dan kalau kamu tiba-tiba muncul di depan aku sekarang…  
+    kemungkinan besar aku bakal langsung meluk kamu.
+  </p>
+</section>
+
+<!-- COUNTER -->
+<section>
+  <h2>Sejak 22 November 2025</h2>
+
+  <p>Kita sudah bersama selama:</p>
+
+  <div class="counter" id="days">0 hari</div>
+
+  <p>Aku masih mau nambah ribuan hari lagi sama kamu.</p>
+</section>
+
+<!-- PUZZLE -->
+<section>
+  <h2>Sebelum lanjut...</h2>
+
+  <p>Masukkan tanggal penting kita (DDMMYY) 💖</p>
+
+  <input id="code" placeholder="221125">
+  <br>
+  <button onclick="checkCode()">Buka</button>
+</section>
+
+<!-- ENVELOPE -->
+<section id="envelopeSection" style="display:none">
+  <h2>Sebuah surat untukmu 💌</h2>
+
+  <div class="envelope" onclick="openEnvelope(this)">
+    <div class="flap"></div>
+  </div>
+
+  <div class="letter" id="letter">
+    <b>Surat Cinta Valentine's Day 2026</b><br><br>
+
+    Hani yang tercinta,<br><br>
+
+    Pada pagi yang cerah ini, 14 Februari 2026, hatiku tak henti berdegup kencang setiap kali mengingat senyummu.<br><br>
+
+    Hani, terima kasih telah menjadi bagian terindah dari hidupku.<br><br>
+
+    Aku rindu pelukmu. Aku milikmu selamanya.<br><br>
+
+    Dengan segala cinta,<br>
+    <b>Abdiel</b>
+  </div>
+
+  <button onclick="final()">Pesan terakhir ❤️</button>
+</section>
+
+<!-- FINAL -->
+<section id="final">
+  <h2>Aku sayang kamu, Hani ❤️</h2>
+
+  <p>
+    Kalau suatu hari kamu ragu…  
+    ingat aja ada satu orang yang selalu memilih kamu.
+  </p>
+</section>
+
+<footer>From Abdiel❤️</footer>
+
+<script>
+setTimeout(()=>{
+  document.getElementById("intro").classList.add("fade");
+},3500);
+
+function start(){
+  document.getElementById("music").play();
+  document.querySelectorAll("section")[1]
+    .scrollIntoView({behavior:"smooth"});
+}
+
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting) e.target.classList.add("show");
+  });
+},{threshold:.2});
+
+document.querySelectorAll("section")
+  .forEach(s=>observer.observe(s));
+
+/* COUNTER */
+const startDate=new Date("2025-11-22");
+const today=new Date();
+const diff=Math.floor((today-startDate)/(1000*60*60*24));
+document.getElementById("days").textContent=diff+" hari";
+
+/* PUZZLE */
+function checkCode(){
+  if(document.getElementById("code").value==="221125"){
+    document.getElementById("envelopeSection").style.display="flex";
+    document.getElementById("envelopeSection")
+      .scrollIntoView({behavior:"smooth"});
+  }else{
+    alert("Hmm... coba ingat lagi tanggal penting kita 💭");
+  }
+}
+
+/* ENVELOPE */
+function openEnvelope(el){
+  el.classList.add("open");
+  document.getElementById("letter").style.display="block";
+}
+
+/* FINAL */
+function final(){
+  const f=document.getElementById("final");
+  f.style.display="flex";
+  f.scrollIntoView({behavior:"smooth"});
+}
+</script>
+
+</body>
+</html>
